@@ -28,7 +28,8 @@ function App() {
     }
   };
 
-  const currentStats = playerData?.stats?.[playerData.stats.length - 1] || {};
+  const currentStats = playerData?.stats?.length > 0 ? playerData.stats[playerData.stats.length - 1] : {};
+  const statsForChart = (playerData?.stats || []).slice(-5);
 
   return (
     <div className="min-h-screen w-full p-4 md:p-8 flex flex-col items-center">
@@ -106,7 +107,7 @@ function App() {
               </div>
               <div className="h-80 w-full">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={playerData.stats.slice(-5)}>
+                  <BarChart data={statsForChart}>
                     <XAxis dataKey="SEASON_ID" stroke="rgba(255,255,255,0.3)" fontSize={12} />
                     <YAxis stroke="rgba(255,255,255,0.3)" fontSize={12} />
                     <Tooltip
