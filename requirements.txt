@@ -1,5 +1,7 @@
-fastapi
-uvicorn
-pandas
 nba_api
+werkzeug
+pandas
+numpy
+axios
 requests
+urllib3

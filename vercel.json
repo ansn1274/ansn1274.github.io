@@ -1,8 +1,24 @@
 {
     "rewrites": [
         {
+            "source": "/api/search_players",
+            "destination": "/api/search_players.py"
+        },
+        {
+            "source": "/api/player_stats",
+            "destination": "/api/player_stats.py"
+        },
+        {
+            "source": "/api/ping_node",
+            "destination": "/api/ping_node.js"
+        },
+        {
             "source": "/api/(.*)",
             "destination": "/api/index.py"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
